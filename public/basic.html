@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Basic Web OSC Control</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <style>
+      body {
+        margin: auto;
+        font-family: "Avant Garde", sans-serif;
+      }
+      #osc-controls{
+        width: 600px;
+        margin: 0px auto;
+        padding: 20px;
+      }
+
+      /**
+       * Make the sliders look slightly less janky
+       */
+      input[type="range"]{
+        -webkit-appearance:none !important;
+        width: 500px;
+        height: 40px;
+        background-color: #0c6;
+      }
+
+      input[type="range"]::-webkit-slider-thumb{
+        -webkit-appearance:none !important;
+        width: 20px;
+        height: 36px;
+        background-color: #333;
+      }
+    </style>
+
+  </head>
+  <body>
+    <div id="osc-controls">
+      <h1>Slider controls</h1>
+      <input id="slider1" class="slider" type="range" min="0" max="500" />
+      <p class="note">Current value: <span id="slider1-value">0</span></p>
+
+      <input id="slider2" class="slider" type="range" min="0" max="500" />
+      <p class="note">Current value: <span id="slider2-value">0</span></p>
+
+      <input id="slider3" class="slider" type="range" min="0" max="500" />
+      <p class="note">Current value: <span id="slider3-value">0</span></p>
+
+      <input id="slider4" class="slider" type="range" min="0" max="500" />
+      <p class="note">Current value: <span id="slider4-value">0</span></p>
+    </div>
+
+    <script>
+      $(function () {
+          $(".slider").change(function (e) {
+              $.get("/osc?" + this.id + "=" + this.value);
+              $("#" + this.id + "-value").html(this.value);
+          });
+          $(".slider").change();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "web-osc",
+  "description": "A bridge that allows you to use OSC via web controls",
+  "version": "0.0.1",
+  "homepage":"https://github.com/deanh/web-osc",
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "coffee-script": "~1.2",
+    "express": "3.x",
+    "underscore": "= 1.2.2",
+    "stitch": "~0.3.3",
+    "osc-min": "~0.0.8"
+  }
+}
