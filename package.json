@@ -7,9 +7,9 @@
     "type": "git"
   },
   "dependencies": {
-    "coffee-script": "~1.2",
+    "coffee-script": "~ 1.4",
     "express": "3.x",
-    "underscore": "= 1.2.2",
+    "underscore": "~ 1.2.2",
     "stitch": "~0.3.3",
     "osc-min": "~0.0.8"
   }
